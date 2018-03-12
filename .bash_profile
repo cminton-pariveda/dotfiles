@@ -1,4 +1,4 @@
-script_dir="$(cd "$(dirname "{BASH_SOURCE[0]}")" && pwd)"
+script_dir="$(cd -P "$(dirname "$(readlink "${BASH_SOURCE[0]}")")" && pwd)"
 
 # Import custom functions
 OIFS="$IFS"
