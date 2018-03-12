@@ -1,8 +1,6 @@
 # Connor's Dotfiles
 
-## symlinks
+## Installing
 
-```
-~/.bash_profile -> .bash_profile
-~/.vimrc -> .vimrc
-```
+Simply run `link.sh`. It symlinks your dotfiles in `~` to the dotfiles in this
+repository.
