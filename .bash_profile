@@ -1,9 +1,12 @@
 script_dir="$(cd "$(dirname "{BASH_SOURCE[0]}")" && pwd)"
 
 # Import custom functions
-for file in $(ls "$script_dir/bash_scripts"); do
-  . "$script_dir/bash_scripts/$file"
+OIFS="$IFS"
+IFS=$'\n'
+for file in $(find "$script_dir/bash_scripts" -name '*.sh' -print0 | xargs -0 printf '%s\n'); do
+  . "$file"
 done
+IFS="$OIFS"
 
 # z
 . /usr/local/etc/profile.d/z.sh
